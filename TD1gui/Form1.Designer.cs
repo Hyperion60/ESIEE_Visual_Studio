@@ -35,6 +35,16 @@ namespace ESIEE_Visual_Studio
             AdditionView.init_Click(this.number1, this.number2, this.result, this.errors);
         }
 
+        private void calctemp_Click(object sender, EventArgs e)
+        {
+            TemperatureView.temp_calc(this.fartemp, this.temp_result, this.errors_temp);
+        }
+
+        private void inittemp_Click(object sender, EventArgs e)
+        {
+            TemperatureView.temp_init(this.fartemp, this.temp_result, this.errors_temp);
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -57,8 +67,16 @@ namespace ESIEE_Visual_Studio
             this.number1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.errors_temp = new System.Windows.Forms.Label();
+            this.temp_result = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.temp_calc = new System.Windows.Forms.Button();
+            this.fartemp = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.temp_init = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -189,13 +207,83 @@ namespace ESIEE_Visual_Studio
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.temp_init);
+            this.tabPage2.Controls.Add(this.errors_temp);
+            this.tabPage2.Controls.Add(this.temp_result);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.temp_calc);
+            this.tabPage2.Controls.Add(this.fartemp);
+            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(777, 403);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Temperature";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // errors_temp
+            // 
+            this.errors_temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.errors_temp.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.errors_temp.Location = new System.Drawing.Point(15, 159);
+            this.errors_temp.Name = "errors_temp";
+            this.errors_temp.Size = new System.Drawing.Size(312, 61);
+            this.errors_temp.TabIndex = 5;
+            this.errors_temp.Text = "Errors :\r\n";
+            this.errors_temp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // temp_result
+            // 
+            this.temp_result.Location = new System.Drawing.Point(264, 109);
+            this.temp_result.Name = "temp_result";
+            this.temp_result.Size = new System.Drawing.Size(63, 32);
+            this.temp_result.TabIndex = 4;
+            this.temp_result.Text = "-";
+            this.temp_result.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(15, 109);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(243, 32);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Température en degrés Celsius :";
+            // 
+            // temp_calc
+            // 
+            this.temp_calc.Location = new System.Drawing.Point(248, 49);
+            this.temp_calc.Name = "temp_calc";
+            this.temp_calc.Size = new System.Drawing.Size(160, 38);
+            this.temp_calc.TabIndex = 2;
+            this.temp_calc.Text = "Convertir";
+            this.temp_calc.UseVisualStyleBackColor = true;
+            this.temp_calc.Click += new System.EventHandler(this.calctemp_Click);
+            // 
+            // fartemp
+            // 
+            this.fartemp.Location = new System.Drawing.Point(15, 55);
+            this.fartemp.Name = "fartemp";
+            this.fartemp.Size = new System.Drawing.Size(189, 26);
+            this.fartemp.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(15, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(493, 32);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Entrez une température en Fahreinheit pour la convertir en Celsius :";
+            // 
+            // temp_init
+            // 
+            this.temp_init.Location = new System.Drawing.Point(432, 49);
+            this.temp_init.Name = "temp_init";
+            this.temp_init.Size = new System.Drawing.Size(160, 38);
+            this.temp_init.TabIndex = 6;
+            this.temp_init.Text = "Réinitialiser";
+            this.temp_init.UseVisualStyleBackColor = true;
+            this.temp_init.Click += new System.EventHandler(this.inittemp_Click);
             // 
             // Form1
             // 
@@ -208,12 +296,27 @@ namespace ESIEE_Visual_Studio
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Label errors;
+        private System.Windows.Forms.Button temp_init;
+
+        private System.Windows.Forms.Label errors_temp;
+
+        private System.Windows.Forms.Label temp_result;
+
+        private System.Windows.Forms.Label label8;
+
+        private System.Windows.Forms.Label label7;
+
+        private System.Windows.Forms.TextBox fartemp;
+        private System.Windows.Forms.Button temp_calc;
 
         private System.Windows.Forms.Label label6;
+
+        private System.Windows.Forms.Label errors;
 
         private System.Windows.Forms.Button initbutton;
 
