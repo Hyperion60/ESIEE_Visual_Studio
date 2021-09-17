@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace ESIEE_Visual_Studio
 {
     partial class Form1
@@ -21,6 +23,17 @@ namespace ESIEE_Visual_Studio
 
             base.Dispose(disposing);
         }
+        
+        // Addition
+        private void addresult_Click(object sender, EventArgs e)
+        {
+            AdditionView.result_Click(this.number1, this.number2, this.result, this.errors);
+        }
+
+        private void addinit_Click(object sender, EventArgs e)
+        {
+            AdditionView.init_Click(this.number1, this.number2, this.result, this.errors);
+        }
 
         #region Windows Form Designer generated code
 
@@ -32,6 +45,7 @@ namespace ESIEE_Visual_Studio
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.errors = new System.Windows.Forms.Label();
             this.initbutton = new System.Windows.Forms.Button();
             this.result = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +73,7 @@ namespace ESIEE_Visual_Studio
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.errors);
             this.tabPage1.Controls.Add(this.initbutton);
             this.tabPage1.Controls.Add(this.result);
             this.tabPage1.Controls.Add(this.label5);
@@ -77,6 +92,15 @@ namespace ESIEE_Visual_Studio
             this.tabPage1.Text = "Addition";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // errors
+            // 
+            this.errors.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.errors.Location = new System.Drawing.Point(12, 194);
+            this.errors.Name = "errors";
+            this.errors.Size = new System.Drawing.Size(346, 64);
+            this.errors.TabIndex = 10;
+            this.errors.Text = "Erreurs :\r\n";
+            // 
             // initbutton
             // 
             this.initbutton.Location = new System.Drawing.Point(537, 141);
@@ -85,6 +109,7 @@ namespace ESIEE_Visual_Studio
             this.initbutton.TabIndex = 9;
             this.initbutton.Text = "Réinitialiser";
             this.initbutton.UseVisualStyleBackColor = true;
+            this.initbutton.Click += new System.EventHandler(this.addinit_Click);
             // 
             // result
             // 
@@ -94,7 +119,6 @@ namespace ESIEE_Visual_Studio
             this.result.TabIndex = 8;
             this.result.Text = "-";
             this.result.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // this.result.Click += new System.EventHandler(this.result_Click);
             // 
             // label5
             // 
@@ -113,7 +137,7 @@ namespace ESIEE_Visual_Studio
             this.addbutton.TabIndex = 6;
             this.addbutton.Text = "Additionner";
             this.addbutton.UseVisualStyleBackColor = true;
-            // this.addbutton.Click += new System.EventHandler(this.result_Click);
+            this.addbutton.Click += new System.EventHandler(this.addresult_Click);
             // 
             // label4
             // 
@@ -186,6 +210,10 @@ namespace ESIEE_Visual_Studio
             this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label errors;
+
+        private System.Windows.Forms.Label label6;
 
         private System.Windows.Forms.Button initbutton;
 
